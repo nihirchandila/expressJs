@@ -1,0 +1,91 @@
+<%# Include header #%>
+<%- include('header')-%>
+<!-- Home page hero -->
+<div class="container">
+  <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 fst-italic"><%= val.hero.title %></h1>
+      <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about
+        what’s most interesting in this post’s contents.</p>
+    </div>
+</div>
+</div>
+<!-- home page cards -->
+<div class="cards">
+  <div class="container">
+    <h2>Services</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= val.serviceCards.design.title %>
+            </h5>
+            <p class="card-text">
+              <%= val.serviceCards.design.dis %>
+            </p>
+          </div>
+          <div class="card-footer">
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= val.serviceCards.dev.title %>
+            </h5>
+            <p class="card-text">
+              <%= val.serviceCards.dev.dis %>
+            </p>
+          </div>
+          <div class="card-footer">
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= val.serviceCards.marketing.title %>
+            </h5>
+            <p class="card-text">
+              <%= val.serviceCards.marketing.dis %>
+            </p>
+          </div>
+          <div class="card-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--accordion-->
+<div class="acc">
+  <div class="container">
+    <h2>Services</h2>
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+      <% val.acc.forEach(function(input){ %>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              <%=input.title %>
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <%=input.dis %>
+            </div>
+          </div>
+        </div>
+        <%});%>
+    </div>
+  </div>
+</div>
+<!--accordion-->
+
+
+<%# Include footer #%>
+<%- include('footer')-%>
